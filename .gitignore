@@ -1,0 +1,6 @@
+# Build artifact folders
+build
+.vs
+.vscode
+bin
+obj
