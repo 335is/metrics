@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Go DataDog metrics client")
+	fmt.Println("Go datadog metrics client")
 
 	var ip = "127.0.0.1"
 	var port = "8125"

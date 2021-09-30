@@ -12,9 +12,11 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+	cout << "C++ cpp-client metrics client" << "\n";
+
 	std::string ip("127.0.0.1");
 	uint16_t port(8125);
-	std::string prefix("CPP-client");
+	std::string prefix("cpp-client");
 	std::string metricName("main.forloop.increment");
 	StatsdClient client{ ip, port, prefix };
 

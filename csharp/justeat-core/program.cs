@@ -8,9 +8,9 @@ namespace JustEat
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("C# JustEat metrics client");
+            Console.WriteLine("C# justeat-core metrics client");
 
-            var statsDConfig = new StatsDConfiguration { Host = "127.0.0.1", Port = 8125, Prefix = "justeat-client" };
+            var statsDConfig = new StatsDConfiguration { Host = "127.0.0.1", Port = 8125, Prefix = "justeat-core-client" };
             var address = statsDConfig.Host + ":" + statsDConfig.Port;
             string metricName = "main.forloop.increment";
             IStatsDPublisher statsDPublisher = new StatsDPublisher(statsDConfig);
