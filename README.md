@@ -79,23 +79,23 @@ make
 
 ---
 
-## StatsD Local Daemon
+## StatsD Local Daemon (Linux)
 The common implementation of StatsD is a Node.js server that listens to UDP messages on port 8125.
 
 ### Installation
 I followed the steps in this article.
 <https://www.sentinelone.com/blog/statsd-measure-anything-in-your-system/>
 
+#### Install Node.js
+```
+sudo apt-get install -y nodejs
+```
+
 #### Clone the statsd repo
 ```
 cd /mnt/c/test/statsd
 git clone https://github.com/statsd/statsd
 cd statsd
-```
-
-#### Install Node.js
-```
-sudo apt-get install -y nodejs
 ```
 
 #### Modify the config file
@@ -110,6 +110,43 @@ nano localConfig.js
 , backends: [ "./backends/console" ]
 }
 ```
+#### Run StatsD
+```
+node stats.js localConfig.js
+```
+
+---
+
+## StatsD Local Daemon (Windows)
+
+### Installation
+I followed the steps in this article.
+<https://stackoverflow.com/questions/5436606/using-etsys-statsd-in-a-windows-environment>
+
+#### Install Node.js
+Download the MSI installer and run it to completion.
+https://nodejs.org/en/download/
+https://nodejs.org/dist/v14.18.0/node-v14.18.0-x64.msi
+
+
+#### Install the statsd server
+```
+md c:\code\node.js\StatsD
+cd c:\code\node.js\StatsD
+npm install https://github.com/etsy/statsd.git
+```
+
+#### Create a config file
+```
+# configure StatsD with debug output and using console for the backend
+cd c:\code\node.js\StatsD\node_modules\statsd
+# create a config.json file containing the following text.
+{
+  debug: true
+, backends: [ "./backends/console" ]
+}
+```
+
 #### Run StatsD
 ```
 node stats.js localConfig.js
